@@ -1,0 +1,368 @@
+.testimonials-page {
+  padding-bottom: 70px;
+}
+
+.testimonials-container {
+  padding-top: 40px;
+}
+
+/* Rating Summary Banner */
+.rating-summary-banner {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 30px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+.rating-big-score {
+  display: flex;
+  flex-direction: column;
+}
+
+.score-num {
+  font-size: 48px;
+  font-weight: 800;
+  color: #092548;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.score-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.score-count {
+  font-size: 13px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.rating-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rate-f-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.rate-f-icon {
+  color: #10b981;
+}
+
+/* Reviews Grid */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.review-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: #93c5fd;
+  box-shadow: 0 12px 24px rgba(11, 87, 208, 0.08);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.quote-mark {
+  color: #0b57d0;
+  opacity: 0.25;
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+}
+
+.review-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #334155;
+  font-style: italic;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.review-appliance-tag {
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.review-appliance-tag strong {
+  color: #0b57d0;
+}
+
+.review-author-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.author-role {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Feedback Submission Box */
+.feedback-submission-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 34px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+}
+
+.feedback-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.f-icon {
+  color: #0b57d0;
+  flex-shrink: 0;
+}
+
+.feedback-header h3 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #092548;
+  margin-bottom: 4px;
+}
+
+.feedback-header p {
+  font-size: 13.5px;
+  color: #64748b;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.f-row-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.f-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.f-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.f-field input,
+.f-field select,
+.f-field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #0f172a;
+  background-color: #f8fafc;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.f-field input:focus,
+.f-field select:focus,
+.f-field textarea:focus {
+  border-color: #0b57d0;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(11, 87, 208, 0.12);
+}
+
+.f-submit-btn {
+  background: #0b57d0;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+
+.f-submit-btn:hover {
+  background: #0043b3;
+}
+
+.feedback-thank-you {
+  text-align: center;
+  padding: 24px;
+}
+
+.feedback-thank-you h4 {
+  font-size: 18px;
+  font-weight: 800;
+  color: #092548;
+  margin: 10px 0 4px;
+}
+
+.feedback-thank-you p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Bottom CTA Card */
+.testimonials-cta-card {
+  background: linear-gradient(135deg, #0243a0 0%, #001f54 100%);
+  border-radius: 16px;
+  padding: 34px 44px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.t-cta-content h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.t-cta-content p {
+  font-size: 14px;
+  color: #bfdbfe;
+}
+
+.t-cta-btn {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  padding: 12px 26px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.t-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.4);
+}
+
+@media (max-width: 960px) {
+  .rating-summary-banner {
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .f-row-three {
+    grid-template-columns: 1fr;
+  }
+  .testimonials-cta-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .rating-summary-banner {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+  .score-num {
+    font-size: 38px;
+  }
+  .review-card {
+    padding: 22px 18px;
+    border-radius: 16px;
+  }
+  .feedback-form-card {
+    padding: 24px 18px;
+    border-radius: 16px;
+  }
+  .submit-review-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .testimonials-cta-card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+}

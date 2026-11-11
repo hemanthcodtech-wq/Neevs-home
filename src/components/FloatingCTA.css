@@ -1,0 +1,124 @@
+.floating-cta-root {
+  position: fixed;
+  bottom: 26px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.scroll-top-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #0b57d0;
+  border: 1.5px solid #bfdbfe;
+  box-shadow: 0 8px 22px rgba(11, 87, 208, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+.scroll-top-btn:hover {
+  background: #0b57d0;
+  color: #ffffff;
+  border-color: #0b57d0;
+}
+
+/* WhatsApp Floating Button */
+.floating-whatsapp-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.38);
+  position: relative;
+  text-decoration: none;
+}
+
+.wa-pulse-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(37, 211, 102, 0.4);
+  animation: pulseGlowRing 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes pulseGlowRing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.wa-tooltip {
+  position: absolute;
+  right: 66px;
+  background: rgba(9, 37, 72, 0.95);
+  backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 6px 12px;
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+.floating-whatsapp-btn:hover .wa-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Floating Call Button for Mobile */
+.floating-call-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(234, 88, 12, 0.38);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .floating-cta-root {
+    bottom: 20px;
+    right: 18px;
+    gap: 10px;
+  }
+  .floating-call-btn {
+    display: flex;
+  }
+  .wa-tooltip {
+    display: none;
+  }
+}
+

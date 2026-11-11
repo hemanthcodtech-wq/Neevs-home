@@ -1,0 +1,240 @@
+.signin-page-root {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background-color: #f1f5f9;
+}
+
+.signin-card-container {
+  width: 100%;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+/* Left Branded Panel */
+.signin-brand-panel {
+  background: linear-gradient(135deg, #0243a0 0%, #001f54 100%);
+  color: #ffffff;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.brand-panel-logo {
+  background: #ffffff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  width: fit-content;
+}
+
+.brand-logo-img {
+  height: 32px;
+  width: auto;
+}
+
+.brand-panel-middle {
+  margin: 40px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.brand-symbol-circle {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.brand-shield {
+  color: #38bdf8;
+}
+
+.brand-welcome-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.brand-welcome-desc {
+  font-size: 14px;
+  color: #bfdbfe;
+  line-height: 1.6;
+}
+
+.brand-version-badge {
+  font-size: 11px;
+  color: #64748b;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4px 10px;
+  border-radius: 12px;
+  width: fit-content;
+}
+
+/* Right Form Panel */
+.signin-form-panel {
+  padding: 44px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.signin-header {
+  margin-bottom: 28px;
+}
+
+.signin-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #092548;
+  margin-bottom: 4px;
+}
+
+.signin-subtitle {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.signin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.signin-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.signin-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.field-icon {
+  position: absolute;
+  left: 14px;
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+.input-with-icon input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #0f172a;
+  background: #f8fafc;
+  outline: none;
+  transition: all 0.2s;
+}
+
+.input-with-icon input:focus {
+  border-color: #0b57d0;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(11, 87, 208, 0.12);
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  color: #94a3b8;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.signin-options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.remember-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+  cursor: pointer;
+}
+
+.forgot-password-link {
+  color: #0b57d0;
+  font-weight: 600;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.signin-submit-btn {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.25);
+  transition: all 0.2s;
+  margin-top: 6px;
+}
+
+.signin-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.35);
+}
+
+.signin-footer-note {
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+.contact-admin-link {
+  color: #0b57d0;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .signin-card-container {
+    grid-template-columns: 1fr;
+  }
+  .signin-brand-panel {
+    display: none;
+  }
+}
+

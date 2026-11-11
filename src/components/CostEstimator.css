@@ -1,0 +1,261 @@
+.cost-estimator-section {
+  padding: 60px 0 50px;
+  background: #f8fafc;
+}
+
+.estimator-card {
+  background: #ffffff;
+  border: 1.5px solid #dbeafe;
+  border-radius: 24px;
+  padding: 44px;
+  box-shadow: 0 12px 36px rgba(11, 87, 208, 0.08);
+}
+
+.estimator-header {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.estimator-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #092548;
+  margin: 8px 0 6px;
+  letter-spacing: -0.5px;
+}
+
+.estimator-subtitle {
+  font-size: 15px;
+  color: #64748b;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.estimator-interactive-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1.15fr;
+  gap: 30px;
+  align-items: stretch;
+}
+
+.col-label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Appliance Stack */
+.appliance-selector-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.app-select-btn {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.app-select-btn:hover {
+  background: #eff6ff;
+  border-color: #93c5fd;
+  color: #0b57d0;
+}
+
+.app-select-btn.active {
+  background: #0b57d0;
+  color: #ffffff;
+  border-color: #0b57d0;
+  box-shadow: 0 4px 14px rgba(11, 87, 208, 0.25);
+}
+
+.app-zap {
+  opacity: 0.6;
+}
+
+.app-select-btn.active .app-zap {
+  opacity: 1;
+  color: #f59e0b;
+}
+
+/* Issues Stack */
+.issues-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.issue-pill-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.issue-pill-item:hover {
+  background: #ffffff;
+  border-color: #93c5fd;
+  transform: translateX(4px);
+}
+
+.issue-pill-item.active {
+  background: #ffffff;
+  border-color: #0b57d0;
+  box-shadow: 0 4px 16px rgba(11, 87, 208, 0.12);
+}
+
+.issue-radio-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid #cbd5e1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.issue-pill-item.active .issue-radio-dot {
+  border-color: #0b57d0;
+  background: #0b57d0;
+  box-shadow: inset 0 0 0 3px #ffffff;
+}
+
+.issue-name {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #1e293b;
+  line-height: 1.4;
+}
+
+/* Output Box */
+.estimator-output-col {
+  display: flex;
+}
+
+.output-pricing-box {
+  width: 100%;
+  background: linear-gradient(135deg, #072347 0%, #03142d 100%);
+  border-radius: 20px;
+  padding: 34px 28px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 14px 30px rgba(7, 35, 71, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.est-badge {
+  background: rgba(56, 189, 248, 0.15);
+  border: 1px solid rgba(56, 189, 248, 0.4);
+  color: #38bdf8;
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 4px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0 auto 12px;
+}
+
+.est-amount {
+  font-size: 34px;
+  font-weight: 900;
+  color: #ffffff;
+  margin-bottom: 4px;
+  font-family: var(--font-heading);
+}
+
+.est-note {
+  font-size: 12.5px;
+  color: #94a3b8;
+  margin-bottom: 22px;
+}
+
+.est-points-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  border-top: 1px dashed rgba(255, 255, 255, 0.15);
+  padding-top: 18px;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.est-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #cbd5e1;
+  line-height: 1.45;
+}
+
+.est-point svg {
+  color: #38bdf8;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.est-book-btn {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  padding: 13px 20px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 6px 18px rgba(234, 88, 12, 0.35);
+}
+
+@media (max-width: 960px) {
+  .cost-estimator-section {
+    padding: 38px 0;
+  }
+  .estimator-card {
+    padding: 26px 18px;
+    border-radius: 18px;
+  }
+  .estimator-title {
+    font-size: 24px;
+  }
+  .estimator-interactive-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  .estimator-quote-panel {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+  .appliance-select-list,
+  .issue-select-list {
+    max-height: 280px;
+  }
+}
+

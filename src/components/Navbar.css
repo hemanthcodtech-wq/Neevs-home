@@ -1,0 +1,315 @@
+/* Top Alert Strip */
+.navbar-top-strip {
+  background: linear-gradient(90deg, #072347 0%, #0b57d0 100%);
+  color: #ffffff;
+  font-size: 12px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-strip-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+  animation: pulseGlow 1.8s infinite;
+}
+
+.ticker-sparkle {
+  color: #f59e0b;
+}
+
+.top-strip-right {
+  display: flex;
+  align-items: center;
+}
+
+.top-call-link {
+  color: #e0f2fe;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.top-call-link:hover {
+  color: #ffffff;
+}
+
+/* Navbar Header */
+.navbar-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #eef2f6;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-header.is-scrolled {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 8px 24px -4px rgba(11, 87, 208, 0.08);
+  border-bottom-color: #dbeafe;
+}
+
+.navbar-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  height: 44px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-name-title {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 900;
+  color: #072347;
+  letter-spacing: -0.5px;
+}
+
+.brand-name-sub {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0b57d0;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-link {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #475569;
+  text-decoration: none;
+  position: relative;
+  padding: 8px 2px;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #0b57d0;
+}
+
+.nav-link.active {
+  color: #0b57d0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2.5px;
+  background: linear-gradient(90deg, #0b57d0, #f97316);
+  border-radius: 4px;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Header Phone Call Element replacing Sign In */
+.nav-phone-call-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f0f7ff;
+  border: 1.5px solid #bfdbfe;
+  padding: 6px 14px 6px 10px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.nav-phone-call-btn:hover {
+  background-color: #e0effe;
+  border-color: #0b57d0;
+  box-shadow: 0 4px 12px rgba(11, 87, 208, 0.15);
+  transform: translateY(-1px);
+}
+
+.phone-icon-bubble {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0b57d0 0%, #072347 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(11, 87, 208, 0.25);
+}
+
+.phone-number-box {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.phone-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #f97316;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.phone-digits {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #072347;
+  letter-spacing: -0.2px;
+}
+
+.book-service-btn {
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  color: #ffffff;
+  padding: 11px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(234, 88, 12, 0.28);
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+}
+
+.book-service-btn:hover {
+  box-shadow: 0 8px 22px rgba(234, 88, 12, 0.42);
+}
+
+.mobile-toggle-btn {
+  display: none;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #0f172a;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.navbar-mobile-dropdown {
+  display: none;
+  flex-direction: column;
+  padding: 16px 20px 22px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #bfdbfe;
+  gap: 6px;
+  overflow: hidden;
+  box-shadow: 0 16px 32px rgba(11, 87, 208, 0.12);
+}
+
+.mobile-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: #334155;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border-bottom: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-link:active {
+  background-color: #eff6ff;
+  color: #0b57d0;
+  transform: scale(0.98);
+}
+
+.mobile-link.active {
+  color: #0b57d0;
+  background-color: #f0f7ff;
+  font-weight: 700;
+}
+
+.mobile-phone-highlight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #072347;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  font-weight: 800;
+  margin-top: 4px;
+}
+
+.mobile-book-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 13px;
+  font-size: 15px;
+}
+
+@media (max-width: 960px) {
+  .navbar-nav {
+    display: none;
+  }
+  .nav-phone-call-btn {
+    display: none;
+  }
+  .mobile-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .navbar-mobile-dropdown {
+    display: flex;
+  }
+  .navbar-top-strip .top-strip-right {
+    display: none;
+  }
+}
