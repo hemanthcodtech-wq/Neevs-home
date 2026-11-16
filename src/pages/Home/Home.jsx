@@ -251,27 +251,22 @@ export default function Home() {
 
   return (
     <div className="home-page">
-      {/* Section 1 – Hero Banner with Devices Showcase */}
-      <section className="home-hero-fullscreen">
-        {/* Full-bleed background image showing all devices & technician (Desktop) */}
-        <div className="hero-fullscreen-bg-wrap desktop-only-bg">
-          <img
-            src="/images/home-hero-technician-devices-clear.jpg"
-            alt="NEEVS Certified Multi-Appliance Service Technician: AC, Refrigerator, Washing Machine, Smart TV, Microwave"
-            className="hero-fullscreen-bg-img"
-          />
-        </div>
+      {/* Section 1 – Hero Banner with Animated Entrance & Devices Showcase */}
+      <section className="home-hero-section">
+        {/* Decorative backdrop gradients */}
+        <div className="hero-decor-orb orb-1"></div>
+        <div className="hero-decor-orb orb-2"></div>
 
-        <div className="page-container hero-fullscreen-content">
+        <div className="page-container hero-grid">
           <motion.div
-            className="hero-fullscreen-text"
+            className="hero-text-content"
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
           >
             <motion.div className="trusted-partner-tag" variants={fadeInUp}>
               <ShieldCheck size={18} className="partner-shield-icon" />
-              <span>DOORSTEP SERVICE ACROSS ALL MAJOR BRANDS</span>
+              <span>YOUR TRUSTED HOME APPLIANCE SERVICE PARTNER</span>
             </motion.div>
 
             <motion.h1 className="hero-title" variants={fadeInUp}>
@@ -280,21 +275,8 @@ export default function Home() {
               at Your Doorstep
             </motion.h1>
 
-            {/* Mobile Visual Feature Box: Dedicated photo of Technician & Devices */}
-            <div className="mobile-hero-photo-card">
-              <img
-                src="/images/home-hero-technician-devices-clear.jpg"
-                alt="NEEVS Certified Appliance Technician at Work"
-                className="mobile-hero-photo-img"
-              />
-              <div className="mobile-photo-badge">
-                <ShieldCheck size={14} />
-                <span>100% Certified Multi-Brand Specialists</span>
-              </div>
-            </div>
-
             <motion.p className="hero-description" variants={fadeInUp}>
-              Prompt, reliable repair solutions for Washing Machines, Refrigerators, Inverter ACs, Smart TVs, and Kitchen Appliances. Certified technicians arriving in 90 minutes with genuine OEM parts.
+              From washing machines and refrigerators to air conditioners, televisions, and microwave ovens, NEEVS provides reliable home appliance repair and maintenance services to keep your household running smoothly.
             </motion.p>
 
             <motion.div className="hero-actions" variants={fadeInUp}>
@@ -303,7 +285,7 @@ export default function Home() {
                 <ArrowRight size={18} />
               </Link>
               <Link to="/services" className="hero-secondary-btn interactive-btn">
-                <span>Explore All Services</span>
+                <span>Explore Our Services</span>
               </Link>
               <a href="tel:+917996163604" className="hero-call-badge interactive-btn">
                 <PhoneCall size={16} />
@@ -314,7 +296,7 @@ export default function Home() {
             <motion.div className="hero-trust-bullets" variants={fadeInUp}>
               <div className="bullet-item">
                 <Check size={16} className="bullet-check" />
-                <span>30-Day Post-Service Warranty</span>
+                <span>30-Day Warranty</span>
               </div>
               <div className="bullet-item">
                 <Check size={16} className="bullet-check" />
@@ -322,19 +304,60 @@ export default function Home() {
               </div>
               <div className="bullet-item">
                 <Check size={16} className="bullet-check" />
-                <span>100% Genuine OEM Spares</span>
+                <span>OEM Spares</span>
               </div>
             </motion.div>
+          </motion.div>
 
-            {/* Quick appliance pill bar */}
-            <motion.div className="hero-appliance-pills" variants={fadeInUp}>
-              <span className="pill-label">Working on:</span>
-              <Link to="/services/ac-service" className="appliance-pill">⚡ Air Conditioners</Link>
-              <Link to="/services/refrigerator" className="appliance-pill">🧊 Refrigerators</Link>
-              <Link to="/services/washing-machine" className="appliance-pill">🧺 Washing Machines</Link>
-              <Link to="/services/television" className="appliance-pill">📺 Smart TVs</Link>
-              <Link to="/services/microwave" className="appliance-pill">🍲 Microwaves</Link>
-            </motion.div>
+          <motion.div
+            className="hero-visual-card"
+            initial={{ opacity: 0, scale: 0.94, y: 30 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          >
+            <div className="hero-banner-wrapper">
+              <div className="hero-image-container">
+                <img
+                  src="/images/home-hero-technician-devices-clear.jpg"
+                  alt="NEEVS Certified Multi-Appliance Service Technician: AC, Refrigerator, Washing Machine, Smart TV, Microwave"
+                  className="hero-main-photo"
+                />
+                
+                {/* Floating verified technician card */}
+                <motion.div
+                  className="hero-float-card float-left"
+                  animate={{ y: [0, -6, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+                >
+                  <div className="float-icon-bubble">
+                    <ShieldCheck size={20} />
+                  </div>
+                  <div>
+                    <strong>100% Certified</strong>
+                    <span>All Major Brands & Devices</span>
+                  </div>
+                </motion.div>
+
+                {/* Floating stats card */}
+                <motion.div
+                  className="hero-float-card float-right"
+                  animate={{ y: [0, 8, 0] }}
+                  transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+                >
+                  <div className="float-stat-number">10K+</div>
+                  <span>Appliances Fixed</span>
+                </motion.div>
+              </div>
+
+              {/* Device tags bar below banner */}
+              <div className="hero-device-tags">
+                <span className="device-tag">⚡ AC Repair</span>
+                <span className="device-tag">🧊 Refrigerators</span>
+                <span className="device-tag">🧺 Washing Machines</span>
+                <span className="device-tag">📺 Smart LED TVs</span>
+                <span className="device-tag">🍲 Microwaves</span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </section>
