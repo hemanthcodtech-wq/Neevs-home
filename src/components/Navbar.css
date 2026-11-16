@@ -313,3 +313,294 @@
     display: none;
   }
 }
+
+/* ============================================================
+   Booking Choice Modal (WhatsApp vs Direct Call vs Online Form)
+   ============================================================ */
+.booking-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 23, 46, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.booking-modal-card {
+  background: #ffffff;
+  border-radius: 24px;
+  max-width: 520px;
+  width: 100%;
+  padding: 32px 28px 24px;
+  position: relative;
+  box-shadow: 0 30px 70px rgba(7, 23, 46, 0.35), 0 0 0 1px rgba(11, 87, 208, 0.08);
+  overflow: hidden;
+}
+
+.booking-modal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #25d366 0%, #0b57d0 50%, #f97316 100%);
+}
+
+.booking-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.booking-modal-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+  transform: rotate(90deg);
+}
+
+.booking-modal-header {
+  margin-bottom: 22px;
+}
+
+.booking-modal-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #eff6ff;
+  color: #0b57d0;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.booking-modal-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #072347;
+  letter-spacing: -0.5px;
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+
+.booking-modal-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.booking-options-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.booking-option-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 20px;
+  border-radius: 16px;
+  border: 1.5px solid #e2e8f0;
+  text-decoration: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  background: #ffffff;
+}
+
+.opt-whatsapp {
+  border-color: #bbf7d0;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.opt-whatsapp:hover {
+  border-color: #22c55e;
+  box-shadow: 0 10px 24px -4px rgba(34, 197, 94, 0.25);
+  transform: translateY(-2px);
+}
+
+.opt-call {
+  border-color: #bfdbfe;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.opt-call:hover {
+  border-color: #0b57d0;
+  box-shadow: 0 10px 24px -4px rgba(11, 87, 208, 0.22);
+  transform: translateY(-2px);
+}
+
+.opt-icon-bubble {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.wa-bubble {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+}
+
+.call-bubble {
+  background: linear-gradient(135deg, #0b57d0 0%, #072347 100%);
+  color: #ffffff;
+}
+
+.opt-text-wrap {
+  flex: 1 1 auto;
+}
+
+.opt-title-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  flex-wrap: wrap;
+}
+
+.opt-title-row h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0;
+}
+
+.opt-badge {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.opt-badge.fastest {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.opt-badge.available {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.opt-text-wrap p {
+  font-size: 12.5px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.opt-text-wrap strong {
+  color: #0b57d0;
+}
+
+.opt-arrow {
+  color: #94a3b8;
+  transition: transform 0.2s ease, color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.booking-option-card:hover .opt-arrow {
+  color: #0f172a;
+  transform: translateX(4px);
+}
+
+.booking-modal-footer {
+  text-align: center;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer-or {
+  font-size: 12px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.online-form-link-btn {
+  background: transparent;
+  color: #0b57d0;
+  font-size: 13.5px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.online-form-link-btn:hover {
+  color: #f97316;
+  text-decoration: underline;
+}
+
+.booking-modal-trust-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.booking-modal-trust-bar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #475569;
+}
+
+.booking-modal-trust-bar svg {
+  color: #10b981;
+}
+
+@media (max-width: 640px) {
+  .booking-modal-card {
+    padding: 24px 20px 20px;
+  }
+  .booking-modal-title {
+    font-size: 20px;
+  }
+  .booking-option-card {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+  .opt-icon-bubble {
+    width: 44px;
+    height: 44px;
+  }
+}

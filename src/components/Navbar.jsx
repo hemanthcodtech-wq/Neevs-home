@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useNavigate, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
-import { Menu, X, PhoneCall, Sparkles } from 'lucide-react';
+import { Menu, X, PhoneCall, Sparkles, MessageCircle, ArrowRight, ShieldCheck, Clock } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [bookingModalOpen, setBookingModalOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -21,7 +22,20 @@ export default function Navbar() {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    setBookingModalOpen(false);
   }, [location.pathname]);
+
+  // Beautiful custom message for WhatsApp
+  const whatsappCustomMessage = encodeURIComponent(
+    `Hello NEEVS Team! 👋\n\nI would like to book a doorstep appliance service.\n\n📍 Location / Area:\n🔧 Appliance Type (AC / Washing Machine / Refrigerator / TV / Microwave):\n⚠️ Issue / Symptom:\n🕒 Preferred Date & Time:\n\nPlease confirm availability and share the service estimate. Thank you!`
+  );
+
+  const whatsappUrl = `https://wa.me/917996163604?text=${whatsappCustomMessage}`;
+
+  const handleOpenBookingModal = () => {
+    setBookingModalOpen(true);
+    setMobileMenuOpen(false);
+  };
 
   return (
     <>
@@ -102,7 +116,7 @@ export default function Navbar() {
 
             <motion.button
               className="book-service-btn interactive-btn"
-              onClick={() => navigate('/book-service')}
+              onClick={handleOpenBookingModal}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -143,7 +157,7 @@ export default function Navbar() {
               </a>
               <button
                 className="book-service-btn mobile-book-btn"
-                onClick={() => navigate('/book-service')}
+                onClick={handleOpenBookingModal}
               >
                 Book a Service
               </button>
@@ -151,6 +165,106 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </motion.header>
+
+      {/* Book Service Choice Modal (WhatsApp vs Call or Online Form) */}
+      <AnimatePresence>
+        {bookingModalOpen && (
+          <div className="booking-modal-backdrop" onClick={() => setBookingModalOpen(false)}>
+            <motion.div
+              className="booking-modal-card"
+              onClick={(e) => e.stopPropagation()}
+              initial={{ opacity: 0, scale: 0.92, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.94, y: 15 }}
+              transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {/* Close Button */}
+              <button
+                className="booking-modal-close"
+                onClick={() => setBookingModalOpen(false)}
+                aria-label="Close dialog"
+              >
+                <X size={20} />
+              </button>
+
+              <div className="booking-modal-header">
+                <div className="booking-modal-tag">
+                  <Sparkles size={14} />
+                  <span>Instant Doorstep Dispatch</span>
+                </div>
+                <h3 className="booking-modal-title">How would you like to book?</h3>
+                <p className="booking-modal-subtitle">
+                  Connect with our certified technician coordinator right away via WhatsApp or direct phone call.
+                </p>
+              </div>
+
+              {/* Action Choices */}
+              <div className="booking-options-grid">
+                {/* WhatsApp Option */}
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="booking-option-card opt-whatsapp"
+                  onClick={() => setBookingModalOpen(false)}
+                >
+                  <div className="opt-icon-bubble wa-bubble">
+                    <MessageCircle size={26} />
+                  </div>
+                  <div className="opt-text-wrap">
+                    <div className="opt-title-row">
+                      <h4>Chat on WhatsApp</h4>
+                      <span className="opt-badge fastest">Fastest · 2 Min Reply</span>
+                    </div>
+                    <p>Instant chat with pre-filled service details & quick technician assignment.</p>
+                  </div>
+                  <ArrowRight size={20} className="opt-arrow" />
+                </a>
+
+                {/* Direct Call Option */}
+                <a
+                  href="tel:+917996163604"
+                  className="booking-option-card opt-call"
+                  onClick={() => setBookingModalOpen(false)}
+                >
+                  <div className="opt-icon-bubble call-bubble">
+                    <PhoneCall size={24} />
+                  </div>
+                  <div className="opt-text-wrap">
+                    <div className="opt-title-row">
+                      <h4>Call Helpline Directly</h4>
+                      <span className="opt-badge available">24/7 Available</span>
+                    </div>
+                    <p>Speak live with our service specialist: <strong>+91 79961 63604</strong></p>
+                  </div>
+                  <ArrowRight size={20} className="opt-arrow" />
+                </a>
+              </div>
+
+              {/* Alternative: Online detailed web form */}
+              <div className="booking-modal-footer">
+                <span className="footer-or">Or fill out our full online form:</span>
+                <button
+                  type="button"
+                  className="online-form-link-btn"
+                  onClick={() => {
+                    setBookingModalOpen(false);
+                    navigate('/book-service');
+                  }}
+                >
+                  Continue to Web Booking Form →
+                </button>
+              </div>
+
+              {/* Trust bar at bottom */}
+              <div className="booking-modal-trust-bar">
+                <span><ShieldCheck size={14} /> 30-Day Warranty</span>
+                <span><Clock size={14} /> 90-Min Doorstep Arrival</span>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
