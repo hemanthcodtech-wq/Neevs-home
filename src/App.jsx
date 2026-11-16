@@ -6,6 +6,7 @@ import FloatingCTA from './components/FloatingCTA';
 import BrandMarquee from './components/BrandMarquee';
 import TrustGuaranteeStrip from './components/TrustGuaranteeStrip';
 import ScrollToTopOnRoute from './components/ScrollToTopOnRoute';
+import SplashScreen from './components/SplashScreen';
 
 // Pages
 import Home from './pages/Home/Home';
@@ -30,6 +31,9 @@ export default function App() {
 
   return (
     <div className="app-layout">
+      {/* Session-Aware First-Time Splash Screen */}
+      <SplashScreen />
+
       <ScrollToTopOnRoute />
       {!isDashboard && <Navbar />}
 
